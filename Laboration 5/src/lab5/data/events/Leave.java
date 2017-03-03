@@ -1,5 +1,7 @@
 package lab5.data.events;
 
-public class Leave {
+import lab5.simulation.Event;
+
+public class Leave extends Event{
 
 }
