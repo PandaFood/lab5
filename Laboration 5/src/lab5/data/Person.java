@@ -1,17 +1,37 @@
 package lab5.data;
 
+import java.util.Random;
+
 import lab5.simulation.Event;
 import lab5.data.events.*;
 
 public class Person {
 
 	Event event;
+	Random random = new Random();
+	private final int BASEHAIRVARIATION = 10;
+	private final int BASEHAIRTIME = 15;
+	private final int HAPPYPERCENT = 70;
+	private int hairTime;
+	private boolean ishappy;
+	
+	
 	public Person(){
-		event = new Enter();
+		event = new Enter(this);
+		hairTime = BASEHAIRTIME - BASEHAIRVARIATION / 2 + random.nextInt(BASEHAIRVARIATION);
+		ishappy = true;
 	}
 	
 	public void Done(){
-		event =  new Leave();
+		// CHECKS IF THEYRE HAPPY
+		if(random.nextInt(100) <= HAPPYPERCENT)
+			event =  new Leave();
+		else{
+		//IF THEYRE NOT SET THE FLAG TO FALSE
+			ishappy = false;
+			event = new Enter(this);
+		}
+			
 	}
 	
 	public void Ready(){
@@ -36,11 +56,11 @@ public class Person {
 	
 	
 	public boolean isHappy(){
-		if(true){
-			return false;
+		if(ishappy){
+			return true;
 		}
 		else
-			return true;
+			return false;
 	}
 	
 	
