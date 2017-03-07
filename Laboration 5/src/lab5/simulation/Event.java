@@ -2,17 +2,10 @@ package lab5.simulation;
 
 import java.util.Observable;
 
-public abstract class Event extends Observable {
-	int time;
+public interface Event {	
+
 	
+	public int getTime();
 	
-	public Event() {
-		
-	}
-	
-	
-	public int getTime(){
-		
-		return time;
-	}
+	public Event nextEvent();
 }

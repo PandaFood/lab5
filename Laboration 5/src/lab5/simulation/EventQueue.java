@@ -20,6 +20,7 @@ public class EventQueue {
 	public Event getEvent(){
 		Event event;
 		event = eventQueue.get(0);
+		eventQueue.add(event.nextEvent());
 		eventQueue.remove(0);
 		return event;
 	}

@@ -14,18 +14,21 @@ public class Person {
 	private final int HAPPYPERCENT = 70;
 	private int hairTime;
 	private boolean ishappy;
+	private static long totalID;
+	private long id;
 	
 	
 	public Person(){
 		event = new Enter(this);
 		hairTime = BASEHAIRTIME - BASEHAIRVARIATION / 2 + random.nextInt(BASEHAIRVARIATION);
 		ishappy = true;
+		id = totalID + 1;
 	}
 	
 	public void Done(){
 		// CHECKS IF THEYRE HAPPY
 		if(random.nextInt(100) <= HAPPYPERCENT)
-			event =  new Leave();
+			event =  new Leave(this);
 		else{
 		//IF THEYRE NOT SET THE FLAG TO FALSE
 			ishappy = false;
@@ -34,8 +37,12 @@ public class Person {
 			
 	}
 	
+	public int getCutTime(){
+		return hairTime;
+	}
+	
 	public void Ready(){
-		event = new Ready();
+		event = new Ready(this);
 	}
 	
 	public boolean isReady(){
@@ -53,7 +60,9 @@ public class Person {
 		
 	}
 	
-	
+	public long getID(){
+		return id;
+	}
 	
 	public boolean isHappy(){
 		if(ishappy){
@@ -63,6 +72,9 @@ public class Person {
 			return false;
 	}
 	
+	public void setEvent(Event e){
+		event = e;
+	}
 	
 	
 	
