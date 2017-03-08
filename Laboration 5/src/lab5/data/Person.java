@@ -7,8 +7,8 @@ import lab5.data.events.*;
 
 public class Person {
 
-	Event event;
-	Random random = new Random();
+	private Event event;
+	private Random random = new Random();
 	private final int BASEHAIRVARIATION = 10;
 	private final int BASEHAIRTIME = 15;
 	private final int HAPPYPERCENT = 70;
@@ -23,6 +23,7 @@ public class Person {
 		hairTime = BASEHAIRTIME - BASEHAIRVARIATION / 2 + random.nextInt(BASEHAIRVARIATION);
 		ishappy = true;
 		id = totalID + 1;
+		
 	}
 	
 	public void Done(){
@@ -74,6 +75,10 @@ public class Person {
 	
 	public void setEvent(Event e){
 		event = e;
+	}
+	
+	public Event getEvent(){
+		return event;
 	}
 	
 	

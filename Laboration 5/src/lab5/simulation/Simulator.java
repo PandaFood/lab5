@@ -13,9 +13,7 @@ public class Simulator {
 	}
 	
 	public Event getEvent(){
-		if(redFlag)
-			return null;
-		return eq.getEvent();		
+		return eq.getEvent();
 	}
 	
 	public boolean addEvent(Event e){
@@ -24,4 +22,13 @@ public class Simulator {
 		eq.addToQueue(e);
 		return true;
 	}
+	
+	public void setDone(){
+		redFlag = true;
+	}
+	
+	public EventQueue returnQueue(){
+		return eq;
+	}
+	
 }

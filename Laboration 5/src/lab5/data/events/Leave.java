@@ -11,15 +11,18 @@ public class Leave implements Event{
 		thisPerson = p;
 	}
 
-	@Override
+	
 	public int getTime() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
 	public Event nextEvent() {
 		return null;
+	}
+	public Person getPerson(){
+		
+		return thisPerson;
 	}
 
 }

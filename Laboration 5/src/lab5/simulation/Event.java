@@ -1,7 +1,5 @@
 package lab5.simulation;
 
-import java.util.Observable;
-
 public interface Event {	
 
 	

@@ -23,4 +23,9 @@ public class Enter implements Event {
 		thisPerson.setEvent(e);
 		return e;
 	}
+	
+	public Person getPerson(){
+		
+		return thisPerson;
+	}
 }

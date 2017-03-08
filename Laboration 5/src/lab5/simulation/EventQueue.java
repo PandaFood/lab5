@@ -13,8 +13,6 @@ public class EventQueue {
 	
 	public void addToQueue(Event e){
 		eventQueue.add(e);
-		
-		
 	}
 	
 	public Event getEvent(){
@@ -23,6 +21,10 @@ public class EventQueue {
 		eventQueue.add(event.nextEvent());
 		eventQueue.remove(0);
 		return event;
+	}
+	
+	public ArrayList getList(){
+		return eventQueue;
 	}
 	
 	public void ClearList(){

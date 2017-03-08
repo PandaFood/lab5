@@ -6,8 +6,20 @@ public class Queue {
 
 	private final int WORKCHAIRS = 3;
 	private final int QUEUECHAIRS = 4;
-	private Person[] chairs;
-	private ArrayList<Person> list;
+	private static Person[] chairs;
+	private static ArrayList<Person> list;
+	
+	public int QUEUECHAIRS(){
+		return QUEUECHAIRS;
+	}
+	
+	public int WORKCHAIRS(){
+		return WORKCHAIRS;
+	}
+	public int workSizeChair(){
+		return chairs.length;
+	}
+
 	
 	public Queue(){
 		list = new ArrayList<Person>();
@@ -30,6 +42,7 @@ public class Queue {
 		else
 			list.add(person);
 	}
+	
 
 	public Person personDone(Person person){
 			for(int i = 0; i < chairs.length; i++){
