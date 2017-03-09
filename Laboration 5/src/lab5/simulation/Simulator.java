@@ -16,6 +16,7 @@ public class Simulator {
 		return eq.getEvent();
 	}
 	
+	
 	public boolean addEvent(Event e){
 		if(redFlag)
 			return false;
