@@ -14,7 +14,7 @@ public class Ready implements Event {
 
 	public int getTime() {
 		// TODO Auto-generated method stub
-		return 0;
+		return thisPerson.getCutTime();
 	}
 
 	public Event nextEvent() {
